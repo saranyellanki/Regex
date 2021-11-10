@@ -11,7 +11,7 @@ public class PasswordRule4 {
      * @return boolean true if matches else false
      */
     public boolean isPassword(String password) {
-        String regex = "^(?=.*[!#@%^&*(){}])[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}$";
+        String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%^&*(){}])[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         if (matcher.matches()) {
