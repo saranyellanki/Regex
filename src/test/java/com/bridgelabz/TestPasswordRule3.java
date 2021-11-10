@@ -12,9 +12,9 @@ public class TestPasswordRule3 {
     }
     @Test
     public void givenPasswordWhenAddedShouldReturnBoolean(){
-        boolean checkPass = password.isPassword("Bgdoh@nwe");
-        Assert.assertFalse(checkPass);
+        boolean checkPass = password.isPassword("Bgdoh7@nwe");
+        Assert.assertTrue(checkPass);
         boolean checkPass1 = password.isPassword("kidv6h#4ef");
-        Assert.assertTrue(checkPass1);
+        Assert.assertFalse(checkPass1);
     }
 }
