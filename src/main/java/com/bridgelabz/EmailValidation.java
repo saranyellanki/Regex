@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,11 +14,8 @@ public class EmailValidation {
     public boolean isEmail(String email) {
         String regex = "^(?!.*@.*@)[a-z-+_0-9]+.[a-z0-9]+@[a-z0-9]+.[a-z]*.[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(email);
-        if (matcher.matches()) {
-            return true;
-        }
-        return false;
+        Predicate<Pattern> matcherPredicate = match -> match.matcher(email).matches();
+        return matcherPredicate.test(pattern);
     }
 
     public static void main(String[] args) {
